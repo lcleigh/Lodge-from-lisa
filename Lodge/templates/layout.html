@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <head>
+            <title>Fawada's Lodge</title>
+            {% load static %}
+            <link rel="stylesheet" type="text/css" href="{% static 'lodge/site.css' %}" />
+        </head>
+
+        <body>
+            <header class="header">
+                <span>0113 8574637</span>   <span>info@fawadaslodge.co.uk</span>
+            </header>
+            
+            <img src="{% static "lodge/media/Fawada_logo.jpg" %}" alt="home" width="200"/>
+           
+        
+            <div class="navbar">
+                <a href="{% url 'index' %}" class="navbar-brand">Home</a>
+                <a href="{% url 'check' %}" class="navbar-item">Check in/Check out</a>
+                <a href="{% url 'booking' %}" class="navbar-item">Bookings</a>
+                <a href="{% url 'room' %}" class="navbar-item">Room Management</a>
+                {% if user.is_authenticated %}
+  
+                    <span style="float:right"><a href="{% url 'logout' %}">Log Out</a></span>
+                {% else %}
+                    <span style="float:right"><a href="{% url 'login' %}">Log In</a></span>
+                {% endif %}
+               
+                
+            </div>
+
+            {% block body %}
+            {% endblock %}
+
+        </body>
+
+        <footer>
+            <p>© Project Group D Productions 2022</p>
+        </footer>
+</html>

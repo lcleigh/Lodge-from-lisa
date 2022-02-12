@@ -1,0 +1,39 @@
+<!-- templates/home.html-->
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+
+{% load static %}
+<div style="border: 1px solid black;">
+    
+
+</div>
+
+{% block content %}
+{% if user.is_authenticated %}
+  <p class="welcome">Hello {{ user.username }}!</p>
+  <p id="login"><a href="{% url 'logout' %}">Log Out</a></p>
+
+
+  {% else %}
+  <p id="welcome">You are not logged in.</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+<br>
+<br>
+
+{% endblock %}
+<div class="background-lodge">
+
+</div>
+
+    
+     
+{% endblock %}
+
+
+
+

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block body %}
+ 
+    <h1>{{ checkin.checkin_date }}</h1>
+
+    <h2> Checked in Guests</h2>
+    <ul>
+        {% for customer in customers %}  
+            <li>{{ customer}} </li>           
+        {% empty %}
+            <li>No customers</li>
+        {% endfor %}
+    </ul>   
+   
+
+    <h1> </h1>
+
+    <h2>Check in a Guest</h2>  
+   
+    <h1> </h1>
+
+    <form action="{% url 'book' checkin.id %}" method="post">
+        {% csrf_token %}
+        <select name="customer">
+            {% for customer in non_customers %}
+                <option value="{{ customer.id }}">{{ customer }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit">
+    
+    </form>
+    
+
+
+    <h1> </h1>
+
+    
+
+    
+{% endblock %}
+
