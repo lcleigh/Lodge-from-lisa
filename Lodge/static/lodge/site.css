@@ -46,13 +46,10 @@ ul {
     padding: 0;
   }
 
-  a {
-      color: #ff0000;
-      text-decoration: none;
-  }
-
+  
   a:hover {
-      text-decoration: underline;
+      background-color: rgb(247, 247, 78);
+      color: black;
   }
 
 
@@ -64,9 +61,16 @@ ul {
 
 .welcome {
     font-size: 2em;
+    color: rgb(1, 124, 1);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     font-variant: small-caps;
+}
+
+.loginlink {
+    font-size: 1.5em;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
 .background-lodge {
