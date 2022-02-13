@@ -3,6 +3,7 @@ from django import forms
 from django.http import HttpResponseBadRequest, HttpResponseRedirect, Http404
 from django.shortcuts import render
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required  #new for autho
 
 
 from .models import Checkin, Customer, Checkout, Guest
@@ -16,6 +17,7 @@ def index(request):
         "checkouts": Checkout.objects.all()
     })
 
+@login_required     #new for autho
 def check(request): 
     return render(request, "lodge/check.html", {
         "checkins": Checkin.objects.all(),
