@@ -15,7 +15,7 @@
 {% block content %}
 {% if user.is_authenticated %}
   <p class="welcome">Hello {{ user.username }}!</p>
-  <p id="login"><a href="{% url 'logout' %}">Log Out</a></p>
+  <p class="loginlink"><a href="{% url 'logout' %}">Log Out</a></p>
 
 
   {% else %}

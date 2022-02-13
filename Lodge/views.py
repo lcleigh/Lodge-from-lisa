@@ -11,7 +11,7 @@ import datetime
 
 # Create your views here.
 def index(request): 
-    return render(request, "home.html", {
+    return render(request, "home.html", {       #changed this from lodge/home.html to home.html
         "checkins": Checkin.objects.all(),
         "checkouts": Checkout.objects.all()
     })
